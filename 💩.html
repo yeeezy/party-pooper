@@ -1,0 +1,174 @@
+<html>
+<head>
+	<title>
+		https://www.reddit.com/r/adidasatc DemandWare ATC Method
+	</title>
+	<style>
+
+		body {
+			margin-left: 50px;
+			margin-top: 20px;
+		}
+		
+		div {
+			margin-bottom: 20px;
+			font-size: 20px;
+		}
+		
+		label {
+			margin-right: 10px;
+		}
+		
+		button {
+		    background: none;
+		    box-shadow: none;
+		    border-radius: 0px;
+		    border: none;
+		    width: 166px;
+		    height: 40px;
+		    font-size: 15px;
+			cursor: pointer;
+		}
+		
+		#atc {
+			background-color: #b3d9ff;
+			margin-bottom: 20px;
+			margin-top: 10px;
+		}
+		
+		#cart {
+			background-color: #ffe6cc;
+		}
+		
+	</style>
+</head>
+<body>
+	<div>
+		<a href="https://www.reddit.com/r/adidasatc"><h2>/r/adidasatc ATC tool</h2></a>
+	</div>
+	<div>
+	<label class="form-label">Product Code:</label><input id="productCode" type="text" value="BZ0223">
+</div>
+<div>
+	<label class="form-label">Locale:</label>
+	<select id="locale">
+	    <option value="en_AE" data-url="www.adidas.ae">AE</option>
+	    <option value="es_AR" data-url="www.adidas.com.ar">AR</option>
+	    <option value="de_AT" data-url="www.adidas.at">AT</option>
+	    <option value="en_AU" data-url="www.adidas.com.au">AU</option>
+	    <option value="fr_BE" data-url="www.adidas.be">BE</option>
+	    <option value="en_BH" data-url="www.adidas.bh">BH</option>
+	    <option value="pt_BR" data-url="www.adidas.com.br">BR</option>
+	    <option value="en_CA" data-url="www.adidas.ca">CA</option>
+	    <option value="fr_CA" data-url="www.adidas.ca">CF</option>
+	    <option value="de_CH" data-url="www.adidas.ch">CH</option>
+	    <option value="es_CL" data-url="www.adidas.cl">CL</option>
+	    <option value="zh_CN" data-url="www.adidas.cn">CN</option>
+	    <option value="es_CO" data-url="www.adidas.co">CO</option>
+	    <option value="cz_CZ" data-url="www.adidas.cz">CZ</option>
+	    <option value="de_DE" data-url="www.adidas.de">DE</option>
+	    <option value="da_DK" data-url="www.adidas.dk">DK</option>
+	    <option value="es_ES" data-url="www.adidas.es">ES</option>
+	    <option value="fi_FI" data-url="www.adidas.fi">FI</option>
+	    <option value="fr_FR" data-url="www.adidas.fr">FR</option>
+	    <option value="en_GB" data-url="www.adidas.co.uk">GB</option>
+	    <option value="en_GR" data-url="www.adidas.gr">GR</option>
+	    <option value="zh_HK" data-url="www.adidas.com.hk">HK</option>
+	    <option value="hu_HU" data-url="www.adidas.hu">HU</option>
+	    <option value="id_ID" data-url="www.adidas.co.id">ID</option>
+	    <option value="en_IE" data-url="www.adidas.ie">IE</option>
+	    <option value="en_IN" data-url="www.adidas.co.in">IN</option>
+	    <option value="it_IT" data-url="www.adidas.it">IT</option>
+	    <option value="ja_JP" data-url="japan.adidas.com">JP</option>
+	    <option value="ko_KR" data-url="www.adidas.co.kr">KR</option>
+	    <option value="ar_KW" data-url="www.mena.adidas.com">KW</option>
+	    <option value="es_MX" data-url="www.adidas.mx">MX</option>
+	    <option value="en_MY" data-url="www.adidas.com.my">MY</option>
+	    <option value="en_NG" data-url="global.adidas.com">NG</option>
+	    <option value="nl_NL" data-url="www.adidas.nl">NL</option>
+	    <option value="no_NO" data-url="www.adidas.no">NO</option>
+	    <option value="en_NZ" data-url="www.adidas.co.nz">NZ</option>
+	    <option value="en_OM" data-url="www.adidas.com.om">OM</option>
+	    <option value="es_PE" data-url="www.adidas.pe">PE</option>
+	    <option value="en_PH" data-url="www.adidas.com.ph">PH</option>
+	    <option value="pl_PL" data-url="www.adidas.pl">PL</option>
+	    <option value="en_PT" data-url="www.adidas.pt">PT</option>
+	    <option value="en_QA" data-url="www.adidas.com.qa">QA</option>
+	    <option value="ru_RU" data-url="www.adidas.ru">RU</option>
+	    <option value="sv_SE" data-url="www.adidas.se">SE</option>
+	    <option value="en_SG" data-url="www.adidas.com.sg">SG</option>
+	    <option value="sk_SK" data-url="www.adidas.sk">SK</option>
+	    <option value="th_TH" data-url="www.adidas.com.th">TH</option>
+	    <option value="tr_TR" data-url="www.adidas.com.tr">TR</option>
+	    <option value="zh_TW" data-url="www.adidas.com.tw">TW</option>
+	    <option selected="selected" value="en_US" data-url="www.adidas.com">US</option>
+	    <option value="es_VE" data-url="latin-america.adidas.com">VE</option>
+	    <option value="vi_VN" data-url="www.adidas.com.vn">VN</option>
+	    <option value="en_ZA" data-url="www.adidas.com.za">ZA</option>
+	</select>
+</div>
+
+<div>
+	<label class="form-label">Size:</label>
+	<select id="size">
+		<option value="530">4</option>
+		<option value="540">4.5</option>
+		<option value="550">5</option>
+		<option value="560">5.5</option>
+		<option value="570">6</option>
+		<option value="580">6.5</option>
+		<option value="590">7</option>
+		<option value="600">7.5</option>
+		<option value="610">8</option>
+		<option value="620">8.5</option>
+		<option value="630">9</option>
+		<option value="640">9.5</option>
+		<option value="650">10</option>
+		<option value="660">10.5</option>
+		<option value="670">11</option>
+		<option value="680">11.5</option>
+		<option value="690">12</option>
+		<option value="700">12.5</option>
+		<option value="710">13</option>
+		<option value="720">13.5</option>
+		<option value="730">14</option>
+		<option value="740">14.5</option>
+		<option value="750">15</option>
+		<option value="760">15.5</option>
+		<option value="770">16</option>
+	</select>
+</div>
+
+<div>
+	<button id="atc" onClick="addToCart()">Add To Cart</button>
+	<br>
+	<button id="cart" onClick="goToCart()">Go To Cart</button>
+</div>
+	<script>
+		function addToCart() {
+			const localeElement = document.getElementById('locale');
+			const localeLong = localeElement.options[localeElement.selectedIndex].value;
+			const localeShort = localeElement.options[localeElement.selectedIndex].text;
+			const adidasSite = localeShort === 'PT' ? 'MLT' : localeShort;
+			const productCode = document.getElementById('productCode').value;
+			const sizeElement = document.getElementById('size');
+			const size = sizeElement.options[sizeElement.selectedIndex].value;
+			const adidasDomain = localeElement.options[localeElement.selectedIndex].dataset.url;
+			const adidasUrl = `https://${adidasDomain}`
+		    var win = window.open(adidasUrl, '_blank');
+		    win.focus();
+		}
+		
+		function goToCart() {
+			const localeElement = document.getElementById('locale');
+			const localeLong = localeElement.options[localeElement.selectedIndex].value;
+			const localeShort = localeElement.options[localeElement.selectedIndex].text;
+			const adidasSite = localeShort === 'PT' ? 'MLT' : localeShort;
+			const adidasDomain = localeElement.options[localeElement.selectedIndex].dataset.url;
+			const adidasUrl = `https://${adidasDomain}/on/demandware.store/Sites-adidas-${adidasSite}-Site/${localeLong}/Cart-Show`
+		    var win = window.open(adidasUrl, '_blank');
+		    win.focus();
+		}
+	</script>
+</body>
+</html>
