@@ -1,5 +1,6 @@
 <html>
 <head>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>
 		https://www.reddit.com/r/adidasatc DemandWare ATC Method
 	</title>
@@ -38,6 +39,13 @@
 		
 		#cart {
 			background-color: #ffe6cc;
+		}
+		
+		#splash{
+			margin-top: 20px;
+			background-color: #009973;
+			width: 200px;
+			height: 50px;
 		}
 		
 	</style>
@@ -111,38 +119,44 @@
 <div>
 	<label class="form-label">Size:</label>
 	<select id="size">
-		<option value="530">4</option>
-		<option value="540">4.5</option>
-		<option value="550">5</option>
-		<option value="560">5.5</option>
-		<option value="570">6</option>
-		<option value="580">6.5</option>
-		<option value="590">7</option>
-		<option value="600">7.5</option>
-		<option value="610">8</option>
-		<option value="620">8.5</option>
-		<option value="630">9</option>
-		<option value="640">9.5</option>
-		<option value="650">10</option>
-		<option value="660">10.5</option>
-		<option value="670">11</option>
-		<option value="680">11.5</option>
-		<option value="690">12</option>
-		<option value="700">12.5</option>
-		<option value="710">13</option>
-		<option value="720">13.5</option>
-		<option value="730">14</option>
-		<option value="740">14.5</option>
-		<option value="750">15</option>
-		<option value="760">15.5</option>
-		<option value="770">16</option>
+		<option value="530">US 4 	/ UK 3.5	/ EU 36</option>
+		<option value="540">US 4.5 	/ UK 4 	 	/ EU 36.7</option>
+		<option value="550">US 5 	/ UK 4.5 	/ EU 37.3</option>
+		<option value="560">US 5.5 	/ UK 5 	 	/ EU 38</option>
+		<option value="570">US 6 	/ UK 5.5 	/ EU 38.7</option>
+		<option value="580">US 6.5 	/ UK 6   	/ EU 39.3</option>
+		<option value="590">US 7 	/ UK 6.5	/ EU 40</option>
+		<option value="600">US 7.5 	/ UK 7 		/ EU 40.7</option>
+		<option value="610">US 8 	/ UK 7.5 	/ EU 41.3</option>
+		<option value="620">US 8.5 	/ UK 8 		/ EU 42</option>
+		<option value="630">US 9 	/ UK 8.5 	/ EU 42.7</option>
+		<option value="640">US 9.5 	/ UK 9 		/ EU 43.3</option>
+		<option value="650">US 10 	/ UK 9.5 	/ EU 44</option>
+		<option value="660">US 10.5 / UK 10 	/ EU 44.7</option>
+		<option value="670">US 11 	/ UK 10.5 	/ EU 45.3</option>
+		<option value="680">US 11.5 / UK 11 	/ EU 46</option>
+		<option value="690">US 12 	/ UK 11.5 	/ EU 46.7</option>
+		<option value="700">US 12.5 / UK 12 	/ EU 47.3</option>
+		<option value="710">US 13 	/ UK 12.5 	/ EU 48</option>
+		<option value="720">US 13.5 / UK 13 	/ EU 48.7</option>
+		<option value="730">US 14 	/ UK 13.5 	/ EU 49.3</option>
+		<option value="740">US 14.5 / UK 14 	/ EU 50</option>
+		<option value="750">US 15 	/ UK 14.5 	/ EU 50.7</option>
+		<option value="760">US 15.5 / UK 15 	/ EU 51.3</option>
+		<option value="770">US 16 	/ UK 15.5 	/ EU 52</option>
 	</select>
 </div>
 
 <div>
+	<label class="form-label">Splash App URL:</label>
+	<input type="text" id="splash-url" value="yeezy" />
+</div>
+<div>
 	<button id="atc" onClick="addToCart()">Add To Cart</button>
 	<br>
 	<button id="cart" onClick="goToCart()">Go To Cart</button>
+	<br>
+	<button id="splash" onClick="splash()">Go To Yeezy Splash (Try Locale)</button>
 </div>
 	<script>
 		function addToCart() {
@@ -154,7 +168,7 @@
 			const sizeElement = document.getElementById('size');
 			const size = sizeElement.options[sizeElement.selectedIndex].value;
 			const adidasDomain = localeElement.options[localeElement.selectedIndex].dataset.url;
-			const adidasUrl = `https://${adidasDomain}`
+			const adidasUrl = `https://${adidasDomain}/on/demandware.store/Sites-adidas-${adidasSite}-Site/${localeLong}/Cart-UpdateItems?qty_0=1&pid_0=%00${productCode}_${size}%00`
 		    var win = window.open(adidasUrl, '_blank');
 		    win.focus();
 		}
@@ -166,6 +180,16 @@
 			const adidasSite = localeShort === 'PT' ? 'MLT' : localeShort;
 			const adidasDomain = localeElement.options[localeElement.selectedIndex].dataset.url;
 			const adidasUrl = `https://${adidasDomain}/on/demandware.store/Sites-adidas-${adidasSite}-Site/${localeLong}/Cart-Show`
+		    var win = window.open(adidasUrl, '_blank');
+		    win.focus();
+		}
+		
+		function splash() {
+			const localeElement = document.getElementById('locale');
+			const localeShort = localeElement.options[localeElement.selectedIndex].text.toLowerCase();
+			const adidasSite = localeShort === 'pt' ? 'mlt' : localeShort;
+			const splash = document.getElementById('splash-url').value;
+			const adidasUrl = `https://www.adidas.com/${localeShort}/apps/${splash}`;
 		    var win = window.open(adidasUrl, '_blank');
 		    win.focus();
 		}
